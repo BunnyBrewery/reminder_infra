@@ -1,3 +1,6 @@
 [submodule "reminder"]
 	path = reminder
 	url = git@github.com:BunnyBrewery/reminder.git
+[submodule "reminder_nginx"]
+	path = reminder_nginx
+	url = git@github.com:BunnyBrewery/reminder_nginx.git
