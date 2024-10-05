@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  reminder-nginx:
+    build:
+      context: ./reminder_nginx
+      dockerfile: Dockerfile
+    ports:
+      - "443:8443"
+    networks:
+      - reminder_network
+    depends_on:
+      - reminder-fastapi
+
+  reminder-fastapi:
+    build:
+      context: ./reminder
+      dockerfile: Dockerfile
+    networks:
+      - reminder_network
+
+networks:
+  reminder_network:
+    driver: bridge
