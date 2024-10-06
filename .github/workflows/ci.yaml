@@ -67,7 +67,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest ${{ github.workspace }}/reminder/test
+          poetry run pytest ${{ github.workspace }}/reminder/test
 
   # docker:
   #   name: Build Docker Images
