@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: '3.11'
           node-version: 20
-a
+
       - name: Install dependencies
         run: |
           poetry install
