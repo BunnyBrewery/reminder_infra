@@ -39,7 +39,7 @@ jobs:
       # - name: Run Linter (pylint)
       #   run: |
       #     pylint reminder/**/*.py
-      
+
 
   test:
     name: Run Python Tests
@@ -57,17 +57,17 @@ jobs:
           python-version: '3.11'
       
       - name: Install Poetry
-        working-directory: ${{ github.workspace }}/reminder
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
       - name: Install dependencies
+        working-directory: ${{ github.workspace }}/reminder
         run: |
           poetry install
 
       - name: Run tests
         run: |
-          pytest reminder/test/
+          pytest ${{ github.workspace }}/reminder/test
 
   # docker:
   #   name: Build Docker Images
