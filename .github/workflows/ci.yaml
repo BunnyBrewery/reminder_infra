@@ -66,6 +66,7 @@ jobs:
           poetry install
 
       - name: Run tests
+        working-directory: ${{ github.workspace }}/reminder
         run: |
           poetry run pytest ${{ github.workspace }}/reminder/test
 
