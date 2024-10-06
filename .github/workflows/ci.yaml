@@ -12,6 +12,9 @@ jobs:
   lint:
     name: Lint Python Code
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: True
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
