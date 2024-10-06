@@ -17,18 +17,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: recursive  
+          fetch-depth: 0  
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          
       
       - name: Install Poetry
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
       - name: Install dependencies
-        working-directory: ./reminder
+        working-directory: ${{ github.workspace }}/reminder
         run: |
           poetry install
 
@@ -42,6 +46,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+         submodules: recursive  
+         fetch-depth: 0 
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -49,7 +56,7 @@ jobs:
           python-version: '3.11'
       
       - name: Install Poetry
-        working-directory: ./reminder
+        working-directory: ${{ github.workspace }}/reminder
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
