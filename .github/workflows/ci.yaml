@@ -28,6 +28,7 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
 
       - name: Install dependencies
+        working-directory: ./reminder
         run: |
           poetry install
 
@@ -48,6 +49,7 @@ jobs:
           python-version: '3.11'
       
       - name: Install Poetry
+        working-directory: ./reminder
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
